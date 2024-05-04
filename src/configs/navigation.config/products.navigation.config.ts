@@ -1,0 +1,283 @@
+import { PRO_PREFIX_PATH } from "@/constants/route.constant";
+import {
+  NAV_ITEM_TYPE_TITLE,
+  NAV_ITEM_TYPE_ITEM,
+  NAV_ITEM_TYPE_COLLAPSE,
+} from "@/constants/navigation.constant";
+import { ADMIN, USER } from "@/constants/roles.constant";
+import type { NavigationTree } from "@/@types/navigation";
+
+const productsNavigationConfig: NavigationTree[] = [
+  {
+    key: "products",
+    path: "",
+    title: "PRODUCTS",
+    translateKey: "products",
+    icon: "product",
+    type: NAV_ITEM_TYPE_TITLE,
+    authority: [ADMIN, USER],
+    subMenu: [
+      {
+        key: "products.product",
+        path: "",
+        title: "Product",
+        translateKey: "Product",
+        icon: "product",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [
+          {
+            key: "products.product.all",
+            path: `${PRO_PREFIX_PATH}/all-products`,
+            title: "Product List",
+            translateKey: "Product List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.product.manifest",
+            path: `/manifest`,
+            title: "Manifest List",
+            translateKey: "Manifest List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+
+          {
+            key: "products.product.Store",
+            path: `/Store`,
+            title: "Store List",
+            translateKey: "Product List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+
+          {
+            key: "products.product.dealtype",
+            path: `/add-deals`,
+            title: "Deal Type",
+            translateKey: "",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.product.category",
+            path: `${PRO_PREFIX_PATH}/category`,
+            title: "Category",
+            translateKey: "Category",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.product.condition",
+            path: `${PRO_PREFIX_PATH}/condition`,
+            title: "Condition",
+            translateKey: "Condition",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.weekdays",
+            path: `/all-weekdays`,
+            title: "All WeekDays",
+            translateKey: "WeekDays",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+         
+        ],
+      },
+
+      // pallet-deals
+      {
+        key: "products.pallet-deals",
+        path: "",
+        title: "Pallet Deals",
+        translateKey: "Pallet Deals",
+        icon: "pallet",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [
+          {
+            key: "products.pallet-deals.all",
+            path: `/pallet-deals/products`,
+            title: "Products List",
+            translateKey: "Products List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.pallet-deals.new",
+            path: `/pallet-deals/upload-new-products`,
+            title: "Create Product",
+            translateKey: "Create Product",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+        ],
+      },
+
+         // case-store
+         {
+          key: "products.product.case-store",
+          path: "",
+          title: "Case Store",
+          translateKey: "Case Store",
+          icon: "pallet",
+          type: NAV_ITEM_TYPE_COLLAPSE,
+          authority: [ADMIN, USER],
+          subMenu: [
+            {
+              key: "products.product.case-store",
+              path: `/case-store`,
+              title: "Case Store List",
+              translateKey: "Case List",
+              icon: "",
+              type: NAV_ITEM_TYPE_ITEM,
+              authority: [ADMIN, USER],
+              subMenu: [],
+            },
+            {
+              key: "products.product.case-store-create",
+              path: `/create-case-store`,
+              title: "Create Product",
+              translateKey: "Create Product",
+              icon: "",
+              type: NAV_ITEM_TYPE_ITEM,
+              authority: [ADMIN, USER],
+              subMenu: [],
+            },
+          ],
+        },
+
+      // truckload-deals
+      {
+        key: "products.truckload-deals",
+        path: "",
+        title: "Truckload Deals",
+        translateKey: "Truckload Deals",
+        icon: "truckLoads",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [
+          {
+            key: "products.truckload-deals.all",
+            path: `/truckload-deals/products`,
+            title: "Products List",
+            translateKey: "Products List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.truckload-deals.new",
+            path: `/truckload-deals/upload-new-products`,
+            title: "Create Product",
+            translateKey: "Create Product",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+        ],
+      },
+
+      // bin-store
+      {
+        key: "products.bin-store",
+        path: "",
+        title: "Bin Store",
+        translateKey: "Bin Store",
+        icon: "binStore",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [
+          {
+            key: "products.bin-store.all",
+            path: `/bin-store/products`,
+            title: "Products List",
+            translateKey: "Products List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.bin-store.new",
+            path: `/bin-store/upload-new-products`,
+            title: "Create Product",
+            translateKey: "Create Product",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+        ],
+      },
+
+      //auction page
+      {
+        key: "products.auction-page",
+        path: "",
+        title: "Auction Page",
+        translateKey: "Auction Page",
+        icon: "auctionPage",
+        type: NAV_ITEM_TYPE_COLLAPSE,
+        authority: [ADMIN, USER],
+        subMenu: [
+          {
+            key: "products.auction-page",
+            path: `/auction-page`,
+            title: "Products List",
+            translateKey: "",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.auction-page-create",
+            path: `/auction-product-create`,
+            title: "Create Product",
+            translateKey: "Products List",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+          {
+            key: "products.bid-page",
+            path: `/all-bids`,
+            title: "All Bids List",
+            translateKey: "All Bids",
+            icon: "",
+            type: NAV_ITEM_TYPE_ITEM,
+            authority: [ADMIN, USER],
+            subMenu: [],
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export default productsNavigationConfig;
